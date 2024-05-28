@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Thymeleaf Iterator</title>
+</head>
+<body>
+	<h1>Going to iterate list of names using Thymeleaf Iterator</h1>
+	
+	<!-- Simply print the list of names -->
+	<p th:text="${names}"></p>
+	
+	<!-- Printing name as a list using  Thymeleaf Iterator-->
+	<ul>
+		<li th:each="name : ${names}">
+			<span th:text="${name}"></span>
+		</li>
+	</ul>
+	
+	<!-- Printing name as a list using  Thymeleaf Iterator y serial number-->
+	<h2>Displaying name using serial number</h2>
+	<ul>
+		<li th:each="name, status : ${names}">
+			<span th:text="${status.index+1} + ''+ ${name} "></span>
+		</li>
+	</ul>
+	
+	<!-- Printing odd number name in bold and red color-->
+	<h2>Styling to the name list</h2>
+	<ul>
+		<li th:each="name, status : ${names}">
+			<span th:style="${status.odd}?'font-weight:bold; color:red;'" th:text="${status.index+1} + ''+ ${name} "></span>
+		</li>
+	</ul>
+	
+	<!-- 
+	Status Property
+	index - status.index, starting with 0th index value
+	count - status.count, the number of elements processed so far.
+	size - status.size, the total number of elements in the list
+	even/odd - status.even/status.odd, checks whether the current iteration index even or not
+	first/last - status.first/.last, checks if the current iteration is firs/last-one
+	 -->
+</body>
+</html>
