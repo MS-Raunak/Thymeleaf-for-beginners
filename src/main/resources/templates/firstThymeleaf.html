@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>First Thymeleaf Project</title>
+</head>
+<body>
+	<h1>Welcome to the First Page of Thymeleaf</h1>
+	
+	<!-- Receiving data from the controller using key 'name' -->
+	<p>this is the first <span th:text="${name}"></span> project</p>
+	
+	<!--  Converting String in Uppercase in Thymeleaf -->
+	<h2 th:text="${#strings.toUpperCase(msg)}"></h2>
+	
+	<!-- Finding length of String in Thymeleaf -->
+	<h2 th:text="'Length of ' + ${msg} + ' is ' + ${#strings.length(msg)}"></h2>
+	
+</body>
+</html>
