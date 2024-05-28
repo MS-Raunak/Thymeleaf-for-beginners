@@ -16,5 +16,11 @@
 	<!-- Finding length of String in Thymeleaf -->
 	<h2 th:text="'Length of ' + ${msg} + ' is ' + ${#strings.length(msg)}"></h2>
 	
+	<!-- Declaring Variable in Thymeleaf(We can declare and consume variable in same tag only) -->
+	<h1 th:text="${var} + ' in thymeleaf' "></h1>
+	<div th:with="a=10, b=20">
+		<h2 th:text="'Sum of ' + ${a} + ' and ' + ${b} + ' = ' + ${a+b} "></h2>
+	</div>
+	
 </body>
 </html>

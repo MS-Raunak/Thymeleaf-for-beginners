@@ -13,6 +13,7 @@ public class MyController {
 	public String handler1(Model model) {  //sending data to the view thru model
 		model.addAttribute("name", "Thymeleaf");
 		model.addAttribute("msg", "jai shree ram");
+		model.addAttribute("var", "Variable");
 		return "firstThymeleaf";
 	}
 	
