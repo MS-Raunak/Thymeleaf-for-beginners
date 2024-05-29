@@ -39,5 +39,11 @@ public class MyController {
 		
 		return "conditional";
 	}
+	
+	//Fragments handler
+	@RequestMapping("/fragments")
+	public String getFragments() {
+		return "fragments";
+	}
 
 }

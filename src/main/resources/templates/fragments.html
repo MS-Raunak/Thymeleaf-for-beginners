@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Fragments in Thymeleaf</title>
+</head>
+<body>
+	<h1>Fragments in Thymeleaf</h1>
+	
+	<!-- Host TAG: 1. th:replace-> It will replace host tag with fragment tag -->
+	<nav th:replace="navbar::navFrag"></nav>
+	
+	<!-- Host TAG: 2. th:insert-> It will insert complete fragment tag inside host tag-->
+	<header th:insert="header::headerFrag"></header>
+	
+	<!-- Host TAG: 3. th:include-> It will insert only content of fragment inside host tag-->
+	<footer th:include="footer::footerFrag"></footer>
+</body>
+</html>
