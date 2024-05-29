@@ -1,5 +1,6 @@
 package com.ms.controller;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -45,5 +46,15 @@ public class MyController {
 	public String getFragments() {
 		return "fragments";
 	}
+	
+	//Sending data from host tag to fragment handler
+	@RequestMapping("/service")
+	public String service(Model model) {
+		model.addAttribute("title", "Getting data from host tag");
+		model.addAttribute("subtitle", LocalDate.now().toString());
+		
+		return "service";
+	}
+	
 
 }
